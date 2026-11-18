@@ -1,0 +1,65 @@
+---
+/**
+ * Selo da loja de aplicativos. Sem link (`href` vazio) aparece como
+ * "Em breve", desabilitado; com link, vira um botão para a loja.
+ */
+interface Props {
+  store: "App Store" | "Google Play";
+  href?: string;
+}
+
+const { store, href = "" } = Astro.props;
+---
+
+{
+  href ? (
+    <a class="store-badge store-badge--live" href={href} target="_blank" rel="noopener noreferrer">
+      <span class="store-badge__eyebrow">Baixar na</span>
+      <span class="store-badge__store">{store}</span>
+    </a>
+  ) : (
+    <button type="button" class="store-badge" disabled aria-label={`Em breve na ${store}`}>
+      <span class="store-badge__eyebrow">Em breve</span>
+      <span class="store-badge__store">{store}</span>
+    </button>
+  )
+}
+
+<style>
+  .store-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    padding: var(--space-2xs) var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+    font-family: var(--font-family-base);
+    cursor: default;
+  }
+
+  .store-badge--live {
+    cursor: pointer;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-primary-contrast);
+  }
+
+  .store-badge--live:hover {
+    text-decoration: none;
+    color: var(--color-primary-contrast);
+    background-color: var(--color-primary-hover);
+  }
+
+  .store-badge__eyebrow {
+    font-size: var(--font-size-xs);
+    opacity: 0.8;
+  }
+
+  .store-badge__store {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+  }
+</style>

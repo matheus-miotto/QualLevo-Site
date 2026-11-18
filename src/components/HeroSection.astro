@@ -1,0 +1,156 @@
+---
+import Section from "./Section.astro";
+import Container from "./Container.astro";
+import Icon from "./Icon.astro";
+import Logo from "./Logo.astro";
+import StoreBadge from "./StoreBadge.astro";
+import ScreenshotShowcase from "./ScreenshotShowcase.astro";
+import { TRUST_POINTS } from "../utils/home-content";
+import { SITE } from "../utils/site";
+---
+
+<Section ariaLabel="Apresentação do Qual Levo?">
+  <Container>
+    <div class="hero">
+      <div class="hero__brand">
+        <Logo size="lg" />
+      </div>
+
+      <h1 class="hero__title">
+        Na frente da prateleira,<br />
+        <span class="hero__highlight">saiba qual levar.</span>
+      </h1>
+
+      <p class="hero__subtitle">
+        Compare o preço por quilo, litro ou unidade em segundos, leia o
+        código de barras e acompanhe a lista e o carrinho do começo ao fim
+        da compra.
+      </p>
+
+      <ul class="hero__points">
+        {
+          TRUST_POINTS.map((point) => (
+            <li>
+              <span class="hero__point-icon">
+                <Icon name={point.icon} size={16} />
+              </span>
+              <span>{point.label}</span>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="hero__actions">
+        <StoreBadge store="App Store" href={SITE.appStoreUrl} />
+      </div>
+
+      <div class="hero__media">
+        <ScreenshotShowcase />
+      </div>
+    </div>
+  </Container>
+</Section>
+
+<style>
+  .hero {
+    display: grid;
+    align-items: center;
+    grid-template-areas:
+      "brand"
+      "title"
+      "subtitle"
+      "media"
+      "points"
+      "actions";
+  }
+
+  .hero__brand {
+    grid-area: brand;
+    margin-bottom: var(--space-md);
+  }
+
+  .hero__title {
+    grid-area: title;
+    font-size: var(--font-size-3xl);
+    line-height: 1.12;
+    margin: 0 0 var(--space-sm);
+  }
+
+  .hero__highlight {
+    color: var(--color-primary);
+  }
+
+  .hero__subtitle {
+    grid-area: subtitle;
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    max-width: 40ch;
+    margin: 0 0 var(--space-lg);
+  }
+
+  .hero__media {
+    grid-area: media;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero__points {
+    grid-area: points;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm) var(--space-lg);
+    list-style: none;
+    margin: 0 0 var(--space-md);
+    padding: 0;
+  }
+
+  .hero__points li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+  }
+
+  .hero__point-icon {
+    display: inline-flex;
+    color: var(--color-primary);
+  }
+
+  .hero__actions {
+    grid-area: actions;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin: 0;
+  }
+
+  @media (min-width: 768px) {
+    .hero {
+      column-gap: var(--space-2xl);
+      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-areas:
+        "brand    ."
+        "title    media"
+        "subtitle media"
+        "points   media"
+        "actions  media";
+    }
+
+    .hero__title {
+      font-size: var(--font-size-5xl);
+      line-height: 1.08;
+      margin-bottom: var(--space-md);
+    }
+
+    .hero__subtitle {
+      font-size: var(--font-size-lg);
+      max-width: 42ch;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero {
+      grid-template-columns: 1fr 1.05fr;
+    }
+  }
+</style>

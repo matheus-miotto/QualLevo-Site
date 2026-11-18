@@ -1,0 +1,125 @@
+/*
+ * Reset e estilos base globais.
+ * Depende das variáveis definidas em theme.css.
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* color-scheme (claro/escuro) é definido por tema em theme.css (:root) */
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin: 0 0 var(--space-sm);
+}
+
+p {
+  margin: 0 0 var(--space-sm);
+  color: var(--color-text-secondary);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+/*
+ * Hover de links usa a própria cor principal (verde), não a variante
+ * escura de hover (--color-primary-hover) — essa é só para elementos que
+ * já têm fundo verde em repouso (ex.: botão primário), onde é preciso
+ * escurecer para o hover ficar visível. Como o link já é verde, o
+ * sublinhado é o que sinaliza a interação.
+ */
+a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* Seleção de texto na cor oficial do Qual Levo? */
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-primary-contrast);
+}
+
+/*
+ * Indicador de foco consistente para todo elemento interativo,
+ * visível apenas em navegação por teclado (:focus-visible).
+ */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  margin: 0 0 var(--space-sm);
+  padding-left: var(--space-md);
+  color: var(--color-text-secondary);
+}
+
+main {
+  display: block;
+  min-height: 60vh;
+}
+
+/*
+ * Documento legal (Política de Privacidade, Termos de Uso): estilos
+ * compartilhados para garantir a mesma estrutura visual, tipografia e
+ * espaçamento entre as páginas institucionais de texto corrido.
+ */
+.legal-document {
+  max-width: 42rem;
+}
+
+.legal-document__header {
+  margin-bottom: var(--space-lg);
+}
+
+.legal-document__updated {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.legal-document h2 {
+  font-size: var(--font-size-xl);
+  margin-top: var(--space-2xl);
+}

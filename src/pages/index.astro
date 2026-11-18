@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import Container from "../components/Container.astro";
+import HeroSection from "../components/HeroSection.astro";
+import FeatureGrid from "../components/FeatureGrid.astro";
+import FeatureCard from "../components/FeatureCard.astro";
+import { FEATURES } from "../utils/home-content";
+import { withBase } from "../utils/paths";
+---
+
+<Layout
+  title="Qual Levo? — Compare o preço por quilo e economize no mercado"
+  description="O Qual Levo? mostra qual embalagem compensa mais pelo preço por quilo, litro ou unidade, lê código de barras e acompanha sua lista e seu carrinho de compras. Grátis, sem cadastro e com seus dados no celular."
+  ogImage={withBase("/images/og-home.png")}
+  ogImageAlt="Qual Levo? — aplicativo para comparar o preço por quilo no mercado"
+>
+  <HeroSection />
+
+  <Section ariaLabel="Recursos do Qual Levo?" tight>
+    <Container>
+      <h2 class="section-title">Tudo o que você precisa no mercado</h2>
+      <FeatureGrid>
+        {
+          FEATURES.map((feature) => (
+            <FeatureCard
+              icon={feature.icon}
+              title={feature.title}
+              description={feature.description}
+            />
+          ))
+        }
+      </FeatureGrid>
+    </Container>
+  </Section>
+</Layout>
+
+<style>
+  .section-title {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--space-xl);
+  }
+</style>

@@ -1,0 +1,68 @@
+---
+import { withBase } from "../utils/paths";
+
+interface Props {
+  size?: "sm" | "lg";
+  iconOnly?: boolean;
+}
+
+const { size = "sm", iconOnly = false } = Astro.props;
+
+const sLogo = withBase("/images/logo/icon.svg");
+---
+
+<span class:list={["logo", `logo--${size}`]}>
+  <img
+    class="logo__mark"
+    src={sLogo}
+    alt={iconOnly ? "Qual Levo?" : ""}
+    loading="eager"
+    decoding="async"
+  />
+
+  {!iconOnly && <span class="logo__word">Qual <span class="logo__accent">Levo?</span></span>}
+</span>
+
+<style>
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    color: var(--color-text-primary);
+  }
+
+  .logo__mark {
+    flex-shrink: 0;
+    display: block;
+    border-radius: 22.5%;
+  }
+
+  .logo__word {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: inherit;
+  }
+
+  .logo__accent {
+    color: var(--color-primary);
+  }
+
+  .logo--sm .logo__mark {
+    width: 28px;
+    height: 28px;
+  }
+
+  .logo--sm .logo__word {
+    font-size: var(--font-size-lg);
+  }
+
+  .logo--lg .logo__mark {
+    width: 56px;
+    height: 56px;
+  }
+
+  .logo--lg .logo__word {
+    font-size: var(--font-size-2xl);
+  }
+</style>

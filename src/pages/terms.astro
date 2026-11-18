@@ -1,0 +1,118 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import Container from "../components/Container.astro";
+import { SITE } from "../utils/site";
+import { withBase } from "../utils/paths";
+
+const lastUpdated = "17 de novembro de 2026";
+---
+
+<Layout
+  title="Termos de Uso"
+  description="Termos de Uso do Qual Levo?: condições para usar o aplicativo de comparação de preços, listas e carrinho de compras."
+>
+  <Section ariaLabel="Termos de Uso">
+    <Container>
+      <article class="legal-document">
+        <header class="legal-document__header">
+          <h1>Termos de Uso</h1>
+          <p class="legal-document__updated">Última atualização: {lastUpdated}</p>
+          <p>
+            Estes termos explicam as condições para usar o aplicativo Qual
+            Levo?. Leia com atenção; eles valem junto com a{" "}
+            <a href={withBase("/privacy")}>Política de Privacidade</a>.
+          </p>
+        </header>
+
+        <h2>Aceitação</h2>
+        <p>
+          Ao baixar ou usar o Qual Levo?, você concorda com estes termos. Se
+          não concordar, não use o aplicativo.
+        </p>
+
+        <h2>O que o aplicativo faz</h2>
+        <p>
+          O Qual Levo? ajuda a comparar o preço por unidade de medida (quilo,
+          litro, metro ou unidade), a montar listas de compras, a acompanhar
+          o total do carrinho e a guardar o histórico dos preços que você
+          registra. O uso é gratuito e não exige cadastro.
+        </p>
+
+        <h2>Os cálculos são uma ajuda, não uma garantia</h2>
+        <p>
+          Os resultados dependem dos preços e quantidades que você digita ou
+          que vêm da base de produtos. Confira sempre o preço na etiqueta e no
+          caixa. A previsão de gasto é uma estimativa feita a partir dos seus
+          preços anteriores e pode ser diferente do valor real. A decisão de
+          compra é sempre sua.
+        </p>
+
+        <h2>Base de produtos</h2>
+        <p>
+          Nomes e tamanhos de produtos vêm de bases públicas e colaborativas
+          (Open Food Facts e projetos irmãos, licença ODbL) e podem estar
+          incompletos ou desatualizados. Você pode corrigir ou cadastrar
+          produtos no próprio app. Marcas e nomes de produtos pertencem aos
+          seus respectivos donos.
+        </p>
+
+        <h2>Seus dados</h2>
+        <p>
+          Os dados ficam armazenados somente no seu aparelho. Você é
+          responsável por guardá-los: se trocar de celular, desinstalar o app
+          ou apagar os dados dele, use antes a função de exportar backup.
+          Não conseguimos recuperar dados apagados, porque não temos cópia
+          deles.
+        </p>
+
+        <h2>Publicidade</h2>
+        <p>
+          O aplicativo exibe anúncios fornecidos pelo Google AdMob. Não
+          controlamos o conteúdo de cada anúncio, e as ofertas anunciadas são
+          de responsabilidade dos anunciantes.
+        </p>
+
+        <h2>Uso adequado</h2>
+        <p>
+          Não é permitido copiar, modificar, fazer engenharia reversa ou
+          redistribuir o aplicativo, nem usá-lo de forma que prejudique o seu
+          funcionamento ou o de serviços de terceiros.
+        </p>
+
+        <h2>Limitação de responsabilidade</h2>
+        <p>
+          O aplicativo é oferecido como está. Fazemos o possível para que ele
+          funcione bem, mas não garantimos que estará livre de erros ou
+          disponível o tempo todo, e não nos responsabilizamos por prejuízos
+          decorrentes de compras feitas com base nos cálculos, por preços
+          digitados incorretamente ou pela perda de dados armazenados no
+          aparelho.
+        </p>
+
+        <h2>Propriedade intelectual</h2>
+        <p>
+          O nome Qual Levo?, a marca, o ícone e o código do aplicativo são
+          protegidos. Os dados de produtos de terceiros seguem as próprias
+          licenças.
+        </p>
+
+        <h2>Alterações dos Termos</h2>
+        <p>
+          Estes termos podem ser atualizados quando o aplicativo mudar. A
+          data no topo indica a versão em vigor. Continuar usando o app após
+          uma alteração significa concordar com a nova versão.
+        </p>
+
+        <h2>Lei aplicável</h2>
+        <p>Estes termos são regidos pelas leis da República Federativa do Brasil.</p>
+
+        <h2>Contato</h2>
+        <p>
+          Dúvidas sobre estes termos:{" "}
+          <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
+        </p>
+      </article>
+    </Container>
+  </Section>
+</Layout>

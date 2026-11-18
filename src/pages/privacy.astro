@@ -1,0 +1,162 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import Container from "../components/Container.astro";
+import { SITE } from "../utils/site";
+
+/**
+ * Texto corrido de política (não fica em src/utils/). Manter alinhado com
+ * o que o app realmente faz: www/app.js no projeto do aplicativo.
+ */
+const lastUpdated = "17 de novembro de 2026";
+---
+
+<Layout
+  title="Política de Privacidade"
+  description="Política de Privacidade do Qual Levo?: seus produtos, preços e listas ficam no seu celular. Saiba quando o app usa a internet, a câmera e o Google AdMob."
+>
+  <Section ariaLabel="Política de Privacidade">
+    <Container>
+      <article class="legal-document">
+        <header class="legal-document__header">
+          <h1>Política de Privacidade</h1>
+          <p class="legal-document__updated">Última atualização: {lastUpdated}</p>
+          <p>
+            O Qual Levo? foi feito para funcionar sem cadastro e sem servidor
+            próprio: o que você digita fica no seu celular. Esta página
+            explica quais informações o aplicativo usa, onde elas ficam, em
+            quais situações serviços de terceiros participam e quais são os
+            seus direitos. Ela segue a Lei Geral de Proteção de Dados (LGPD –
+            Lei nº 13.709/2018) e as regras da App Store e do Google Play.
+          </p>
+        </header>
+
+        <h2>Dados que você registra no aplicativo</h2>
+        <p>O Qual Levo? guarda, somente no seu aparelho:</p>
+        <ul>
+          <li>produtos que você cadastra ou encontra (nome, tamanho, unidade e código de barras);</li>
+          <li>preços pagos, com o mercado e a data;</li>
+          <li>nomes de mercados;</li>
+          <li>listas de compras, quantidades, orçamento e o carrinho em andamento;</li>
+          <li>as opções preenchidas na tela de comparação.</li>
+        </ul>
+        <p>
+          Não existe conta de usuário, login ou servidor do Qual Levo?. Esses
+          dados não são enviados para nós e não temos acesso a eles. Se você
+          desinstalar o app ou apagar os dados dele, as informações são
+          removidas do aparelho.
+        </p>
+
+        <h2>Câmera</h2>
+        <p>
+          A câmera é usada apenas para ler códigos de barras, quando você
+          toca no botão de leitura. A leitura acontece no próprio aparelho, e
+          as imagens não são gravadas nem enviadas. Você pode negar ou
+          revogar a permissão de câmera nos ajustes do sistema; nesse caso,
+          ainda é possível digitar o código ou buscar o produto pelo nome.
+        </p>
+
+        <h2>Consulta de produtos pela internet</h2>
+        <p>
+          O app traz uma base de produtos embutida, consultada sem internet.
+          Quando um código de barras não está nessa base, ou quando o app
+          confere se um produto da base foi atualizado, ele envia{" "}
+          <strong>apenas o número do código de barras</strong> às bases
+          públicas e gratuitas{" "}
+          <a href="https://world.openfoodfacts.org" target="_blank" rel="noopener noreferrer">Open Food Facts</a>,
+          Open Beauty Facts, Open Products Facts e Open Pet Food Facts, para
+          obter o nome e o tamanho do produto. Nenhum dado seu (lista,
+          preços, mercados) é enviado. Como em qualquer acesso à internet,
+          esses serviços podem registrar o endereço IP da conexão.
+        </p>
+        <p>
+          Os dados de produtos vêm do Open Food Facts e são disponibilizados
+          sob a licença Open Database License (ODbL).
+        </p>
+
+        <h2>Publicidade (Google AdMob)</h2>
+        <p>
+          O Qual Levo? é gratuito e exibe um banner de anúncio fornecido pelo
+          Google AdMob. Para isso, o Google pode coletar e tratar dados como o
+          identificador de publicidade do aparelho, endereço IP, informações
+          do dispositivo e interações com os anúncios, inclusive para
+          personalizar anúncios quando você consentir. Saiba mais em{" "}
+          <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">como o Google usa informações de apps que usam seus serviços</a>.
+        </p>
+        <p>
+          Quando a legislação da sua região exige, o app mostra um formulário
+          de consentimento antes de exibir anúncios, e você pode rever a
+          escolha em <em>Produtos → Opções de privacidade dos anúncios</em>.
+          No iPhone, o app pede a permissão de rastreamento do sistema (App
+          Tracking Transparency); se você negar, os anúncios deixam de ser
+          personalizados. Você também pode redefinir ou limitar o
+          identificador de publicidade nos ajustes do aparelho.
+        </p>
+
+        <h2>Dados que o Qual Levo? não solicita</h2>
+        <p>
+          O app não pede nome, e-mail, telefone, CPF, localização, contatos,
+          fotos da galeria nem dados de pagamento.
+        </p>
+
+        <h2>Backup</h2>
+        <p>
+          Ao usar <em>Exportar backup</em>, o app gera um arquivo com os seus
+          dados e abre o compartilhamento do sistema para você escolher onde
+          salvar ou para quem enviar. Esse arquivo fica sob o seu controle; o
+          Qual Levo? não guarda cópia dele.
+        </p>
+
+        <h2>Compartilhamento de dados</h2>
+        <p>
+          Não vendemos nem compartilhamos dados pessoais. Os únicos terceiros
+          envolvidos são o Open Food Facts (somente o código de barras
+          consultado) e o Google AdMob, nas condições descritas acima.
+        </p>
+
+        <h2>Transferência internacional</h2>
+        <p>
+          Os servidores do Open Food Facts e do Google podem ficar fora do
+          Brasil. Esse envio se limita ao necessário para consultar produtos e
+          exibir anúncios, conforme as políticas desses serviços.
+        </p>
+
+        <h2>Seus direitos</h2>
+        <p>
+          Pela LGPD, você pode pedir confirmação, acesso, correção e
+          eliminação de dados pessoais. Como os dados do app ficam no seu
+          aparelho, você mesmo pode consultá-los, corrigi-los ou apagá-los a
+          qualquer momento: removendo itens, produtos e listas, ou
+          desinstalando o app. Para dados tratados pelo Google, use as
+          ferramentas do próprio Google. Em caso de dúvida, fale com a gente
+          pelo contato abaixo.
+        </p>
+
+        <h2>Segurança e retenção</h2>
+        <p>
+          Os dados ficam no armazenamento do próprio aplicativo, protegido
+          pelo sistema do aparelho, e permanecem lá até você apagá-los ou
+          desinstalar o app.
+        </p>
+
+        <h2>Crianças</h2>
+        <p>
+          O Qual Levo? não é direcionado a menores de 13 anos e não coleta
+          intencionalmente dados de crianças.
+        </p>
+
+        <h2>Alterações nesta Política</h2>
+        <p>
+          Esta política pode ser atualizada quando o app mudar. A data no
+          topo indica a versão em vigor.
+        </p>
+
+        <h2>Contato</h2>
+        <p>
+          Dúvidas sobre privacidade:{" "}
+          <a href={`mailto:${SITE.supportEmail}`}>{SITE.supportEmail}</a>.
+        </p>
+      </article>
+    </Container>
+  </Section>
+</Layout>
