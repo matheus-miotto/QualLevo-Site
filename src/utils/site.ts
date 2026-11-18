@@ -7,12 +7,13 @@ export const SITE = {
   // Deve ser mantida igual ao `site` de astro.config.mjs.
   url: "https://matheus-miotto.github.io",
   // E-mail oficial de suporte — único ponto de atualização do projeto.
-  // TODO: trocar pelo e-mail real antes de publicar.
   supportEmail: "miottodeveloper@gmail.com",
   // Versão atual do aplicativo (projeto em ../www). Atualizar a cada release.
   appVersion: "1.0.0",
   // Link da App Store — preencher quando o app for publicado.
   appStoreUrl: "",
+  // Link do Google Play — preencher quando o app for publicado.
+  googlePlayUrl: "",
   // O Footer só exibe o link quando este valor não estiver vazio.
   githubUrl: "",
 } as const;
